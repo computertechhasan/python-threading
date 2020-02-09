@@ -15,7 +15,7 @@ def add_numbers(start, end):
     #end_time = datetime.datetime.now()
     #return end_time - start_time
 
-NUMS_TO_ADD = 1000000000
+NUMS_TO_ADD = 10000000000
 PROCS_TO_RUN = 8
 ends = []
 for i in range(0, PROCS_TO_RUN):
@@ -33,4 +33,4 @@ process_pool.join()
 
 end_time = datetime.datetime.now()
 run_time = end_time - start_time
-print("Two CPUs took", run_time, "to add", NUMS_TO_ADD, "numbers")
+print("Eight CPUs took", run_time, "to add", NUMS_TO_ADD, "numbers")

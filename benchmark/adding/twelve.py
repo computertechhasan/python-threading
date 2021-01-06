@@ -12,12 +12,12 @@ def add_numbers(start, end):
     #start_time = datetime.datetime.now()
     for i in range(start, end):
         curr_sum += i
-    print(curr_sum)
+    #print(curr_sum)
     #end_time = datetime.datetime.now()
     #return end_time - start_time
 
 NUMS_TO_ADD = config.NUMS_TO_ADD
-PROCS_TO_RUN = 2
+PROCS_TO_RUN = 12
 ends = []
 for i in range(0, PROCS_TO_RUN):
     if i == 0:
@@ -35,4 +35,3 @@ process_pool.join()
 end_time = datetime.datetime.now()
 run_time = end_time - start_time
 print("Two CPUs took", run_time, "to add", NUMS_TO_ADD, "numbers")
-

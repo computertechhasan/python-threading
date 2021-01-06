@@ -4,6 +4,7 @@ from multiprocessing import Pool
 import os
 import datetime
 import dateutil.parser
+import config
 
 
 def add_numbers(start, end):
@@ -15,7 +16,7 @@ def add_numbers(start, end):
     #end_time = datetime.datetime.now()
     #return end_time - start_time
 
-NUMS_TO_ADD = 10000000000
+NUMS_TO_ADD = config.NUMS_TO_ADD
 PROCS_TO_RUN = 8
 ends = []
 for i in range(0, PROCS_TO_RUN):

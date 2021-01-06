@@ -3,6 +3,7 @@ from multiprocessing import current_process
 import os
 import datetime
 import dateutil.parser
+import config
 
 
 def add_numbers(start, end):
@@ -14,7 +15,7 @@ def add_numbers(start, end):
     print(curr_sum)
     return end_time - start_time
 
-NUMS_TO_ADD = 100000000
+NUMS_TO_ADD = config.NUMS_TO_ADD
 
 run_time = add_numbers(0, NUMS_TO_ADD)
 print("One CPU took", run_time, "to add", NUMS_TO_ADD, "numbers")

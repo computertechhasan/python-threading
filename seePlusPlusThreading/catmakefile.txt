@@ -1,0 +1,26 @@
+gxx=g++ -O3
+
+all: one two config clean
+
+two: two.o
+	$(gxx) two.o -o two -pthread
+one: one.o
+	$(gxx) one.o -o one
+config: config.o
+	$(gxx) config.o -o config
+clean:
+	rm *.o
+
+// working
+gxx=g++ -O3
+
+all: one clean
+
+one: one.o config.o
+	$(gxx) one.o config.o -o one
+one.o: one.cpp config.o
+	$(gxx) -c one.cpp -o one.o
+config.o: config.cpp
+	$(gxx) -c config.cpp -o config.o
+clean:
+	rm *.o
